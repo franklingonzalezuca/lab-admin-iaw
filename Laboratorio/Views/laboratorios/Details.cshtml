@@ -1,0 +1,35 @@
+﻿@model Laboratorio.Models.laboratorio
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Laboratorios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Laboratorio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreLaboratorio)
+        </dd>
+
+        <dt>
+            Activo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idLaboratorio }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

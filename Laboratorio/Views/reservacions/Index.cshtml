@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Laboratorio.Models.reservacion>
+
+@{
+    ViewBag.Title = "Todos los elementos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reservaciones</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva reservación", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Observaciones
+        </th>
+        <th>
+            Hora de entrada
+        </th>
+        <th>
+            Hora de salida
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            Estudiante
+        </th>
+        <th>
+            Horario
+        </th>
+        <th>
+            Laboratorio
+        </th>
+        <th>
+            Tipo de reservación
+        </th>
+        <th>
+            Creador
+        </th>
+        <th>
+            Fecha de reservación
+        </th>
+        <th>
+           Acciones
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+var dateReservation = item.fechaReservacion.ToString().Substring(0, 10);
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.observacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.horaEntrada)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.horaSalida)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.estadoReservacion.nombreEstado)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.estudiante.nombreEstudiante)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.horario.descripcion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.laboratorio.nombreLaboratorio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tipoReservacion.nombreReservacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.usuario.username)
+    </td>
+    <td>
+        
+        @Html.DisplayFor(modelItem => dateReservation)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.idReservacion }) |
+        @Html.ActionLink("Detalles", "Details", new { id = item.idReservacion }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.idReservacion })
+    </td>
+</tr>
+}
+
+</table>

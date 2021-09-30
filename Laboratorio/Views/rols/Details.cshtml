@@ -1,0 +1,43 @@
+﻿@model Laboratorio.Models.rol
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>rol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Rol
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreRol)
+        </dd>
+
+        <dt>
+            Descripcion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idRol }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

@@ -1,0 +1,27 @@
+﻿@model Laboratorio.Models.horario
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>horario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Descripcion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idHorario }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

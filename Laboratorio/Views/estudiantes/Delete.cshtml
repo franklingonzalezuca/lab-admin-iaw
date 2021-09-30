@@ -1,0 +1,73 @@
+﻿@model Laboratorio.Models.estudiante
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Estás seguro que quieres eliminar esto?</h3>
+<div>
+    <h4>estudiante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombres
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreEstudiante)
+        </dd>
+
+        <dt>
+            Apellidos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidoEstudiante)
+        </dd>
+
+        <dt>
+            Año en curso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.añoCurso)
+        </dd>
+
+        <dt>
+            Correo electrónico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            Carrera
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carrera.descripcion)
+        </dd>
+
+        <dt>
+            Género
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genero.descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

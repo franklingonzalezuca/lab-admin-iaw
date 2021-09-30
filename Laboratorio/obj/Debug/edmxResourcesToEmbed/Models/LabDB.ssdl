@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="laboratorioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="carrera">
+    <Key>
+      <PropertyRef Name="idCarrera" />
+    </Key>
+    <Property Name="idCarrera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idFacultad" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estadoReservacion">
+    <Key>
+      <PropertyRef Name="idEstadoReservacion" />
+    </Key>
+    <Property Name="idEstadoReservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreEstado" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="activo" Type="int" />
+  </EntityType>
+  <EntityType Name="estudiante">
+    <Key>
+      <PropertyRef Name="idEstudiante" />
+    </Key>
+    <Property Name="idEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreEstudiante" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellidoEstudiante" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="idGenero" Type="int" Nullable="false" />
+    <Property Name="idCarrera" Type="int" Nullable="false" />
+    <Property Name="añoCurso" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="facultad">
+    <Key>
+      <PropertyRef Name="idFacultad" />
+    </Key>
+    <Property Name="idFacultad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="genero">
+    <Key>
+      <PropertyRef Name="idGenero" />
+    </Key>
+    <Property Name="idGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="horario">
+    <Key>
+      <PropertyRef Name="idHorario" />
+    </Key>
+    <Property Name="idHorario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="laboratorio">
+    <Key>
+      <PropertyRef Name="idLaboratorio" />
+    </Key>
+    <Property Name="idLaboratorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreLaboratorio" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="activo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="opcion">
+    <Key>
+      <PropertyRef Name="idOpcion" />
+    </Key>
+    <Property Name="idOpcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreOpcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="descripcionOpcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="estadoOpcion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reservacion">
+    <Key>
+      <PropertyRef Name="idReservacion" />
+    </Key>
+    <Property Name="idReservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="observacion" Type="nvarchar" MaxLength="100" />
+    <Property Name="idLaboratorio" Type="int" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idEstudiante" Type="int" Nullable="false" />
+    <Property Name="horaEntrada" Type="time" Precision="7" Nullable="false" />
+    <Property Name="horaSalida" Type="time" Precision="7" Nullable="false" />
+    <Property Name="idTipoReservacion" Type="int" Nullable="false" />
+    <Property Name="idEstadoReservacion" Type="int" Nullable="false" />
+    <Property Name="idHorario" Type="int" Nullable="false" />
+    <Property Name="fechaReservacion" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreRol" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rolOpcion">
+    <Key>
+      <PropertyRef Name="idRolOpcion" />
+    </Key>
+    <Property Name="idRolOpcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idOpcion" Type="int" Nullable="false" />
+    <Property Name="idRol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tipoReservacion">
+    <Key>
+      <PropertyRef Name="idTipoReservacion" />
+    </Key>
+    <Property Name="idTipoReservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreReservacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="activo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombres" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidos" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="idGenero" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuarioRol">
+    <Key>
+      <PropertyRef Name="idUsuarioRol" />
+    </Key>
+    <Property Name="idUsuarioRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idRol" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_carrera_facultad">
+    <End Role="facultad" Type="Self.facultad" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="carrera" Type="Self.carrera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="facultad">
+        <PropertyRef Name="idFacultad" />
+      </Principal>
+      <Dependent Role="carrera">
+        <PropertyRef Name="idFacultad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_estudiante_carrera">
+    <End Role="carrera" Type="Self.carrera" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="carrera">
+        <PropertyRef Name="idCarrera" />
+      </Principal>
+      <Dependent Role="estudiante">
+        <PropertyRef Name="idCarrera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_estudiante_genero">
+    <End Role="genero" Type="Self.genero" Multiplicity="1" />
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="genero">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="estudiante">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reservacion_estado">
+    <End Role="estadoReservacion" Type="Self.estadoReservacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservacion" Type="Self.reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoReservacion">
+        <PropertyRef Name="idEstadoReservacion" />
+      </Principal>
+      <Dependent Role="reservacion">
+        <PropertyRef Name="idEstadoReservacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reservacion_estudiante">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservacion" Type="Self.reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="idEstudiante" />
+      </Principal>
+      <Dependent Role="reservacion">
+        <PropertyRef Name="idEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reservacion_horario">
+    <End Role="horario" Type="Self.horario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservacion" Type="Self.reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="horario">
+        <PropertyRef Name="idHorario" />
+      </Principal>
+      <Dependent Role="reservacion">
+        <PropertyRef Name="idHorario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reservacion_laboratorio">
+    <End Role="laboratorio" Type="Self.laboratorio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservacion" Type="Self.reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="laboratorio">
+        <PropertyRef Name="idLaboratorio" />
+      </Principal>
+      <Dependent Role="reservacion">
+        <PropertyRef Name="idLaboratorio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reservacion_tipoReservacion">
+    <End Role="tipoReservacion" Type="Self.tipoReservacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservacion" Type="Self.reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoReservacion">
+        <PropertyRef Name="idTipoReservacion" />
+      </Principal>
+      <Dependent Role="reservacion">
+        <PropertyRef Name="idTipoReservacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reservacion_usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservacion" Type="Self.reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="reservacion">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rolOpcion_opcion">
+    <End Role="opcion" Type="Self.opcion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="rolOpcion" Type="Self.rolOpcion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="opcion">
+        <PropertyRef Name="idOpcion" />
+      </Principal>
+      <Dependent Role="rolOpcion">
+        <PropertyRef Name="idOpcion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rolOpcion_rol">
+    <End Role="rol" Type="Self.rol" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="rolOpcion" Type="Self.rolOpcion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="rolOpcion">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_genero">
+    <End Role="genero" Type="Self.genero" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="genero">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuarioRol_rol">
+    <End Role="rol" Type="Self.rol" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarioRol" Type="Self.usuarioRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="usuarioRol">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuarioRol_usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarioRol" Type="Self.usuarioRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="usuarioRol">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="laboratorioModelStoreContainer">
+    <EntitySet Name="carrera" EntityType="Self.carrera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadoReservacion" EntityType="Self.estadoReservacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estudiante" EntityType="Self.estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="facultad" EntityType="Self.facultad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="genero" EntityType="Self.genero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="horario" EntityType="Self.horario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="laboratorio" EntityType="Self.laboratorio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="opcion" EntityType="Self.opcion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reservacion" EntityType="Self.reservacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rolOpcion" EntityType="Self.rolOpcion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoReservacion" EntityType="Self.tipoReservacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarioRol" EntityType="Self.usuarioRol" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_carrera_facultad" Association="Self.FK_carrera_facultad">
+      <End Role="facultad" EntitySet="facultad" />
+      <End Role="carrera" EntitySet="carrera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_estudiante_carrera" Association="Self.FK_estudiante_carrera">
+      <End Role="carrera" EntitySet="carrera" />
+      <End Role="estudiante" EntitySet="estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_estudiante_genero" Association="Self.FK_estudiante_genero">
+      <End Role="genero" EntitySet="genero" />
+      <End Role="estudiante" EntitySet="estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservacion_estado" Association="Self.FK_reservacion_estado">
+      <End Role="estadoReservacion" EntitySet="estadoReservacion" />
+      <End Role="reservacion" EntitySet="reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservacion_estudiante" Association="Self.FK_reservacion_estudiante">
+      <End Role="estudiante" EntitySet="estudiante" />
+      <End Role="reservacion" EntitySet="reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservacion_horario" Association="Self.FK_reservacion_horario">
+      <End Role="horario" EntitySet="horario" />
+      <End Role="reservacion" EntitySet="reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservacion_laboratorio" Association="Self.FK_reservacion_laboratorio">
+      <End Role="laboratorio" EntitySet="laboratorio" />
+      <End Role="reservacion" EntitySet="reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservacion_tipoReservacion" Association="Self.FK_reservacion_tipoReservacion">
+      <End Role="tipoReservacion" EntitySet="tipoReservacion" />
+      <End Role="reservacion" EntitySet="reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservacion_usuario" Association="Self.FK_reservacion_usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="reservacion" EntitySet="reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rolOpcion_opcion" Association="Self.FK_rolOpcion_opcion">
+      <End Role="opcion" EntitySet="opcion" />
+      <End Role="rolOpcion" EntitySet="rolOpcion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rolOpcion_rol" Association="Self.FK_rolOpcion_rol">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="rolOpcion" EntitySet="rolOpcion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_genero" Association="Self.FK_usuario_genero">
+      <End Role="genero" EntitySet="genero" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuarioRol_rol" Association="Self.FK_usuarioRol_rol">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="usuarioRol" EntitySet="usuarioRol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuarioRol_usuario" Association="Self.FK_usuarioRol_usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="usuarioRol" EntitySet="usuarioRol" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

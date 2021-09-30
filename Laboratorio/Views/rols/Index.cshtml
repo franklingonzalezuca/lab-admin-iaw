@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Laboratorio.Models.rol>
+
+@{
+    ViewBag.Title = "Todos los elementos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Todos los elementos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Rol
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreRol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idRol }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idRol }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idRol })
+        </td>
+    </tr>
+}
+
+</table>

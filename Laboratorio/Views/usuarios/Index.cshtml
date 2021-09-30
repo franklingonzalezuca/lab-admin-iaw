@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Laboratorio.Models.usuario>
+
+@{
+    ViewBag.Title = "Todos los elementos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Todos los elementos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Nombres
+        </th>
+        <th>
+            Apellidos
+        </th>
+        <th>
+            Correo electrónico
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            Género
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idUsuario }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idUsuario }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idUsuario })
+        </td>
+    </tr>
+}
+
+</table>

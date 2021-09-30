@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="laboratorioModelStoreContainer" CdmEntityContainer="laboratorioEntities">
+    <EntitySetMapping Name="carreras">
+      <EntityTypeMapping TypeName="laboratorioModel.carrera">
+        <MappingFragment StoreEntitySet="carrera">
+          <ScalarProperty Name="idCarrera" ColumnName="idCarrera" />
+          <ScalarProperty Name="idFacultad" ColumnName="idFacultad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadoReservacions">
+      <EntityTypeMapping TypeName="laboratorioModel.estadoReservacion">
+        <MappingFragment StoreEntitySet="estadoReservacion">
+          <ScalarProperty Name="idEstadoReservacion" ColumnName="idEstadoReservacion" />
+          <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estudiantes">
+      <EntityTypeMapping TypeName="laboratorioModel.estudiante">
+        <MappingFragment StoreEntitySet="estudiante">
+          <ScalarProperty Name="idEstudiante" ColumnName="idEstudiante" />
+          <ScalarProperty Name="nombreEstudiante" ColumnName="nombreEstudiante" />
+          <ScalarProperty Name="apellidoEstudiante" ColumnName="apellidoEstudiante" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="idCarrera" ColumnName="idCarrera" />
+          <ScalarProperty Name="añoCurso" ColumnName="añoCurso" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facultads">
+      <EntityTypeMapping TypeName="laboratorioModel.facultad">
+        <MappingFragment StoreEntitySet="facultad">
+          <ScalarProperty Name="idFacultad" ColumnName="idFacultad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="generoes">
+      <EntityTypeMapping TypeName="laboratorioModel.genero">
+        <MappingFragment StoreEntitySet="genero">
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="horarios">
+      <EntityTypeMapping TypeName="laboratorioModel.horario">
+        <MappingFragment StoreEntitySet="horario">
+          <ScalarProperty Name="idHorario" ColumnName="idHorario" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="laboratorios">
+      <EntityTypeMapping TypeName="laboratorioModel.laboratorio">
+        <MappingFragment StoreEntitySet="laboratorio">
+          <ScalarProperty Name="idLaboratorio" ColumnName="idLaboratorio" />
+          <ScalarProperty Name="nombreLaboratorio" ColumnName="nombreLaboratorio" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="opcions">
+      <EntityTypeMapping TypeName="laboratorioModel.opcion">
+        <MappingFragment StoreEntitySet="opcion">
+          <ScalarProperty Name="idOpcion" ColumnName="idOpcion" />
+          <ScalarProperty Name="nombreOpcion" ColumnName="nombreOpcion" />
+          <ScalarProperty Name="descripcionOpcion" ColumnName="descripcionOpcion" />
+          <ScalarProperty Name="estadoOpcion" ColumnName="estadoOpcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reservacions">
+      <EntityTypeMapping TypeName="laboratorioModel.reservacion">
+        <MappingFragment StoreEntitySet="reservacion">
+          <ScalarProperty Name="fechaReservacion" ColumnName="fechaReservacion" />
+          <ScalarProperty Name="idReservacion" ColumnName="idReservacion" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="idLaboratorio" ColumnName="idLaboratorio" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idEstudiante" ColumnName="idEstudiante" />
+          <ScalarProperty Name="horaEntrada" ColumnName="horaEntrada" />
+          <ScalarProperty Name="horaSalida" ColumnName="horaSalida" />
+          <ScalarProperty Name="idTipoReservacion" ColumnName="idTipoReservacion" />
+          <ScalarProperty Name="idEstadoReservacion" ColumnName="idEstadoReservacion" />
+          <ScalarProperty Name="idHorario" ColumnName="idHorario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rols">
+      <EntityTypeMapping TypeName="laboratorioModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rolOpcions">
+      <EntityTypeMapping TypeName="laboratorioModel.rolOpcion">
+        <MappingFragment StoreEntitySet="rolOpcion">
+          <ScalarProperty Name="idRolOpcion" ColumnName="idRolOpcion" />
+          <ScalarProperty Name="idOpcion" ColumnName="idOpcion" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="laboratorioModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoReservacions">
+      <EntityTypeMapping TypeName="laboratorioModel.tipoReservacion">
+        <MappingFragment StoreEntitySet="tipoReservacion">
+          <ScalarProperty Name="idTipoReservacion" ColumnName="idTipoReservacion" />
+          <ScalarProperty Name="nombreReservacion" ColumnName="nombreReservacion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="laboratorioModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarioRols">
+      <EntityTypeMapping TypeName="laboratorioModel.usuarioRol">
+        <MappingFragment StoreEntitySet="usuarioRol">
+          <ScalarProperty Name="idUsuarioRol" ColumnName="idUsuarioRol" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

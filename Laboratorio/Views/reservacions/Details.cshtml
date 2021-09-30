@@ -1,0 +1,91 @@
+﻿@model Laboratorio.Models.reservacion
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Reservación</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Observaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observacion)
+        </dd>
+
+        <dt>
+            Hora de entrada
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaEntrada)
+        </dd>
+
+        <dt>
+            Hora de salida
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaSalida)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoReservacion.nombreEstado)
+        </dd>
+
+        <dt>
+            Estudiante
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estudiante.nombreEstudiante)
+        </dd>
+
+        <dt>
+            Horario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario.descripcion)
+        </dd>
+
+        <dt>
+            Laboratorio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.laboratorio.nombreLaboratorio)
+        </dd>
+
+        <dt>
+            Tipo de reservación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoReservacion.nombreReservacion)
+        </dd>
+
+        <dt>
+            Creador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario.username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idReservacion }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

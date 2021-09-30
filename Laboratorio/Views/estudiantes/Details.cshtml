@@ -1,0 +1,67 @@
+﻿@model Laboratorio.Models.estudiante
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>estudiante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombres
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreEstudiante)
+        </dd>
+
+        <dt>
+            Apellidos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidoEstudiante)
+        </dd>
+
+        <dt>
+            Año en curso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.añoCurso)
+        </dd>
+
+        <dt>
+            Correo electrónico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            Carrera
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carrera.descripcion)
+        </dd>
+
+        <dt>
+            Género
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genero.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idEstudiante }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

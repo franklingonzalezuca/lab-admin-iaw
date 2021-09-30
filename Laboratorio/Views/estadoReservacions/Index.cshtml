@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Laboratorio.Models.estadoReservacion>
+
+@{
+    ViewBag.Title = "Todos los elementos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Todos los elementos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Estado
+        </th>
+        <th>
+            Activo
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.activo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idEstadoReservacion }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idEstadoReservacion }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idEstadoReservacion })
+        </td>
+    </tr>
+}
+
+</table>

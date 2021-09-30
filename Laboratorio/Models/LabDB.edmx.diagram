@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a3bf9a4b470a4548ba8bd1170833fc7b" Name="Diagram1">
+        <EntityTypeShape EntityType="laboratorioModel.carrera" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.estadoReservacion" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.estudiante" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.facultad" Width="1.5" PointX="1.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.genero" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.horario" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.laboratorio" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.opcion" Width="1.5" PointX="3" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.reservacion" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.rol" Width="1.5" PointX="3" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.rolOpcion" Width="1.5" PointX="5.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.tipoReservacion" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.usuario" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratorioModel.usuarioRol" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="laboratorioModel.FK_carrera_facultad" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_estudiante_carrera" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_reservacion_estado" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_estudiante_genero" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_reservacion_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_usuario_genero" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_reservacion_horario" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_reservacion_laboratorio" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_rolOpcion_opcion" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_reservacion_tipoReservacion" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_reservacion_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_rolOpcion_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_usuarioRol_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratorioModel.FK_usuarioRol_usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

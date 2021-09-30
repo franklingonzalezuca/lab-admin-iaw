@@ -1,0 +1,35 @@
+﻿@model Laboratorio.Models.estadoReservacion
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>estadoReservacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreEstado)
+        </dd>
+
+        <dt>
+            Activo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idEstadoReservacion }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>
